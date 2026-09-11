@@ -1,38 +1,116 @@
-/* Element selector */
+/* General page styling */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: #f4f4f4;
+    line-height: 1.6;
 }
 
-/* Element selector */
+/* Main heading */
 h1 {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* ID selector */
-#add-expense {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
+/* Add Expense section */
+.add-expense-section {
+    margin-bottom: 30px;
 }
 
-/* ID selector */
-#your-expenses {
-    background-color: lightblue;
-    padding: 20px;
-    margin-top: 20px;
+/* Form layout */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
 }
 
-/* Class selector */
-.placeholder {
-    color: gray;
-    font-style: italic;
+/* Labels */
+label {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-/* Element selector */
-input {
-    display: block;
-    margin-bottom: 15px;
-    padding: 8px;
+/* Inputs and dropdown */
+input,
+select {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+/* Advanced selector: direct child */
+.add-expense-section > h2 {
+    margin-bottom: 5px;
+}
+
+/* Advanced selector: negation */
+input:not([type="submit"]) {
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+/* Advanced selector: focus */
+input:focus {
+    outline: 2px solid #555;
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Expenses table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* Table cells */
+th,
+td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Table header */
+th {
+    background-color: #ddd;
+}
+
+/* Advanced selector: descendant */
+.expenses-section td {
+    font-size: 15px;
+}
+
+/* Alternating table rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Interactive table row */
+tr:hover {
+    background-color: #e6e6e6;
+}
+
+/* Details section */
+details {
+    margin-top: 25px;
+    padding: 10px;
+}
+
+/* Summary */
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Video */
+iframe {
+    max-width: 100%;
+    margin-top: 10px;
 }
