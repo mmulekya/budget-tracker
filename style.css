@@ -1,116 +1,329 @@
-/* General page styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #dbe3ef;
+    --table-alt: #f8fafc;
+    --focus: #60a5fa;
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 30px;
     line-height: 1.6;
 }
 
-/* Main heading */
+
 h1 {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
+
+    max-width: 1100px;
+    margin: 0 auto 25px;
+
+    padding: 24px 28px;
+
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
 }
 
-/* Add Expense section */
+h1 img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Introductory paragraph */
+body > p {
+    max-width: 1100px;
+    margin: 0 auto 25px;
+
+    color: var(--muted);
+    font-size: 16px;
+}
+
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+
 .add-expense-section {
-    margin-bottom: 30px;
+    max-width: 1100px;
+    margin: 0 auto 30px;
+
+    padding: 28px;
+
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
 }
 
-/* Form layout */
+
 form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 500px;
 }
 
-/* Labels */
 label {
-    margin-top: 10px;
-    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
 }
 
-/* Inputs and dropdown */
 input,
 select {
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin-top: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+
+    background-color: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-/* Advanced selector: direct child */
-.add-expense-section > h2 {
-    margin-bottom: 5px;
-}
 
-/* Advanced selector: negation */
 input:not([type="submit"]) {
-    border: 1px solid #999;
-    border-radius: 4px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
 }
 
-/* Advanced selector: focus */
-input:focus {
-    outline: 2px solid #555;
+
+input:focus,
+select:focus {
+    outline: none;
+
+    border-color: var(--focus);
+
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
 }
 
-/* Button */
+
 button {
-    margin-top: 15px;
-    padding: 10px;
-    font-size: 16px;
+    margin-top: 20px;
+    padding: 13px 18px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #ffffff;
+    background-color: var(--primary);
+
+    border: none;
+    border-radius: 8px;
+
     cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
-/* Expenses table */
+button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+.expenses-section {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+
+    padding: 28px;
+
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    overflow-x: auto;
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
-}
+    margin-top: 10px;
 
-/* Table cells */
-th,
-td {
-    border: 1px solid #999;
-    padding: 10px;
-    text-align: left;
-}
-
-/* Table header */
-th {
-    background-color: #ddd;
-}
-
-/* Advanced selector: descendant */
-.expenses-section td {
     font-size: 15px;
 }
 
-/* Alternating table rows */
+th,
+td {
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+
+    text-align: left;
+}
+
+
+th {
+    background-color: var(--primary);
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+
+.expenses-section td {
+    color: var(--text);
+}
+
+
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--table-alt);
 }
 
-/* Interactive table row */
+
 tr:hover {
-    background-color: #e6e6e6;
+    background-color: #eff6ff;
 }
 
-/* Details section */
-details {
-    margin-top: 25px;
-    padding: 10px;
+
+th:first-child {
+    border-top-left-radius: 8px;
 }
 
-/* Summary */
+th:last-child {
+    border-top-right-radius: 8px;
+}
+
+
+section > details {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+
+    padding: 20px 24px;
+
+    background-color: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+}
+
 summary {
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--primary);
+
     cursor: pointer;
 }
 
-/* Video */
-iframe {
-    max-width: 100%;
-    margin-top: 10px;
+details p {
+    color: var(--muted);
+    margin-bottom: 0;
 }
+
+
+section:last-child {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+
+    padding: 28px;
+
+    background-color: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 700px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        padding: 20px;
+        font-size: 25px;
+    }
+
+    .add-expense-section,
+    .expenses-section,
+    section:last-child {
+        padding: 20px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    iframe {
+        height: 250px;
+    }
+}
+
