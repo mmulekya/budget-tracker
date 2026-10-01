@@ -223,3 +223,88 @@ This helps the Budget Tracker remain usable on smaller screens.
 ### Conclusion
 
 The Week 3 update focuses entirely on the visual design of the existing Budget Tracker. The project now has a consistent color palette, improved typography, styled forms and tables, visual cards, spacing, borders, rounded corners, shadows, and responsive styling while maintaining the existing HTML structure and functionality.
+
+
+
+## Week 6: JavaScript Foundation
+
+### What SpendWise Does
+
+SpendWise is a personal finance dashboard designed to help users track their monthly budget, expenses, savings, and spending categories.
+
+In Week 6, JavaScript was added to create the foundation for interactive budget calculations.
+
+### JavaScript Concepts Implemented
+
+The Week 6 JavaScript implementation demonstrates:
+
+* Variables
+* User input with `prompt()`
+* Number conversion
+* Conditional statements
+* Functions
+* Calculations
+* Browser console output
+
+### Variables
+
+The application stores the monthly budget and total expenses using JavaScript variables:
+
+
+let budget = 50000;
+let expenses = 15000;
+
+
+These values provide default amounts before the user enters their own information.
+
+### User Input
+
+The application collects budget and expense information using `prompt()`:
+
+const budgetInput = prompt("Enter your monthly budget:", budget);
+const expensesInput = prompt("Enter your total expenses:", expenses);
+
+Because `prompt()` returns text, the values are converted into numbers using `Number()`.
+
+### Budget Calculation
+
+A reusable function calculates the remaining balance:
+
+function calculateBalance(budgetAmount, expenseAmount) {
+    return budgetAmount - expenseAmount;
+}
+
+
+The remaining balance is calculated by subtracting total expenses from the monthly budget.
+
+### Reusable Functions
+
+The project uses functions to keep the JavaScript organized and reusable.
+
+The `calculateBalance()` function handles the budget calculation, while `displayBudgetSummary()` displays the calculated results in the browser console.
+
+### Console Output
+
+The results are clearly labeled in the browser console.
+
+Example test:
+
+===== SpendWise Budget Summary =====
+Monthly Budget: KSh 50000
+Total Expenses: KSh 15000
+Remaining Balance: KSh 35000
+Status: You are within your budget.
+
+
+### Files Used
+
+| File         | Purpose                                                                  |
+| ------------ | ------------------------------------------------------------------------ |
+| `index.html` | SpendWise dashboard structure                                            |
+| `style.css`  | Dashboard styling and responsive layout                                  |
+| `script.js`  | JavaScript variables, input, calculations, functions, and console output |
+| `README.md`  | Project documentation                                                    |
+
+### Week 6 Learning Outcome
+
+This week introduced JavaScript fundamentals into SpendWise. My project can now accept user input, perform budget calculations, and report the results dynamically through the browser console.
