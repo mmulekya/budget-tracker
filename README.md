@@ -442,3 +442,173 @@ Status: You are within your budget.
 
 This week introduced JavaScript fundamentals into SpendWise. The project can now accept user input, perform budget calculations, and report the results dynamically through the browser console.
 
+
+## Week 6 – Make SpendWise Interactive
+
+This week, SpendWise was upgraded from a static dashboard into an interactive budgeting application using JavaScript.
+
+### Improvements Made This Week
+
+The main improvements were:
+
+* Added an interactive Add Expense form.
+* Added JavaScript arrays to store expense records.
+* Added loops to calculate total expenses.
+* Added conditional statements to evaluate the user's budget.
+* Added DOM manipulation to update the dashboard directly.
+* Added event listeners to respond to user actions.
+* Added dynamic balance and expense-count updates.
+* Preserved the original SpendWise dashboard design and layout.
+
+### Conditionals
+
+SpendWise uses `if`, `else if`, and `else` statements to evaluate the remaining budget.
+
+The application checks whether the remaining balance is:
+
+* Greater than zero — the user is within budget.
+* Equal to zero — the user has reached the budget limit.
+* Less than zero — the user has exceeded the budget.
+
+Example:
+
+
+if (balance > 0) {
+    return "You are within your budget.";
+} else if (balance === 0) {
+    return "You have reached your budget limit.";
+} else {
+    return "You have exceeded your budget.";
+}
+
+
+### Arrays
+
+Expense information is stored in an array of objects.
+
+Each expense contains:
+
+* Name
+* Category
+* Amount
+
+Example:
+
+
+let expenses = [
+    {
+        name: "Lunch",
+        category: "Food",
+        amount: 500
+    },
+    {
+        name: "Bus Fare",
+        category: "Transport",
+        amount: 200
+    }
+];
+
+
+New expenses are added to the array using `push()`.
+
+### Loops
+
+A `for...of` loop processes every expense stored in the array.
+
+
+for (let expense of expenses) {
+    total += expense.amount;
+}
+
+
+This allows SpendWise to calculate the total amount spent dynamically as new expenses are added.
+
+### DOM Updates
+
+JavaScript updates the webpage directly instead of displaying results only in the browser console.
+
+The application dynamically updates:
+
+* Available balance
+* Number of expenses tracked
+* Recent spending records
+
+For example:
+
+
+balanceDisplay.textContent =
+    `KSh ${remainingBalance.toLocaleString()}`;
+
+
+### User Interactions and Events
+
+An event listener is attached to the Add Expense form.
+
+When the user submits the form:
+
+1. The page refresh is prevented.
+2. The entered information is validated.
+3. A new expense is added to the array.
+4. The dashboard is recalculated.
+5. The webpage is updated.
+
+expenseForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Process expense
+
+    updateDashboard();
+});
+
+
+### Challenges and Resolutions
+
+#### Challenge 1: JavaScript syntax error
+
+An `Unexpected identifier 'KSh'` error occurred because the currency text was not correctly handled inside a JavaScript template literal.
+
+**Resolution:** The currency output was placed correctly inside backticks:
+
+
+`KSh ${remainingBalance.toLocaleString()}`
+
+
+#### Challenge 2: Keeping the original design
+
+While adding interactivity, it was important not to replace the original SpendWise dashboard design.
+
+**Resolution:** The existing sidebar, dashboard cards, layout, colors, emojis, and Recent Activity design were preserved. Only the HTML elements required for JavaScript interaction were added.
+
+#### Challenge 3: Connecting data to the interface
+
+The initial JavaScript displayed calculations mainly through the console.
+
+**Resolution:** DOM manipulation was added so that changes to the expense array automatically update the balance and Recent Activity section on the webpage.
+
+### Week 6 Testing
+
+The application was tested with different budgeting scenarios.
+
+#### Within Budget
+
+Initial expenses:
+
+KSh 1,950
+
+
+After adding a KSh 300 Coffee expense:
+
+Total Expenses: KSh 2,250
+Remaining Balance: KSh 47,750
+Status: You are within your budget.
+
+
+#### Over Budget
+
+After adding a KSh 50,000 expense:
+
+Total Expenses: KSh 52,250
+Remaining Balance: KSh -2,250
+Status: You have exceeded your budget.
+
+
