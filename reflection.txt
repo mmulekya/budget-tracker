@@ -1,1 +1,15 @@
 MongoDB felt easiest for storing the student record because I could insert the document directly without defining a table structure first. PostgreSQL required me to define the structure upfront by creating the students table with specific columns and data types. MongoDB allowed me to insert data without a predefined structure, while Redis stores information as simple key-value pairs.
+
+# SpendWise – Deployment Reflection
+
+During this assignment, I learned how to publish my SpendWise application using GitHub and Netlify.
+
+I connected my GitHub repository to Netlify, configured the production branch, customized the website URL, and successfully deployed the application.
+
+One challenge I encountered was GitHub authentication. I resolved it by configuring SSH authentication and verifying that I was connected to the correct GitHub account.
+
+I also tested continuous deployment by making a visible change to my application, pushing it to GitHub, and confirming that Netlify automatically published the update.
+
+This experience helped me understand how developers move applications from local development environments to publicly accessible websites.
+
+**Live Website:** https://mart-tracker.netlify.app/

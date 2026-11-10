@@ -612,68 +612,159 @@ Remaining Balance: KSh -2,250
 Status: You have exceeded your budget.
 
 
-# SpendWise — Web Hosting and Deployment
+# SpendWise – Personal Budget Tracker
 
-## Live Website
+## Live Application
 
-**Live Netlify URL:** https://mart-tracker.netlify.app/
+**Live Website:** https://mart-tracker.netlify.app/
 
 **GitHub Repository:** https://github.com/mmulekya/budget-tracker
 
+SpendWise is a personal budget tracking application designed to help users record expenses, monitor their spending, and manage their monthly budget.
+
+## Project Description
+
+SpendWise provides a simple and interactive dashboard for tracking personal expenses.
+
+Users can:
+- View their available budget balance.
+- Monitor spending across different categories.
+- Add new expenses.
+- View recent spending activity.
+- See their remaining balance update automatically.
+- Receive budget status information based on their spending.
+
+The application uses Kenyan Shillings (KSh) as its currency.
+
+## Technologies Used
+
+- **HTML5:** Structures the dashboard and expense form.
+- **CSS3:** Provides the layout, styling, and responsive presentation.
+- **JavaScript:** Implements expense calculations, conditional logic, arrays, loops, DOM manipulation, and event listeners.
+- **Git and GitHub:** Version control and source-code hosting.
+- **Netlify:** Website hosting and continuous deployment.
+
+## Project Structure
+
+```text
+budget-tracker/
+│
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+└── reflection.txt
+```
+
+## GitHub Repository Information
+
+**Repository Name:** budget-tracker
+
+**GitHub Username:** mmulekya
+
+**Repository URL:** https://github.com/mmulekya/budget-tracker
+
+**Production Branch:** main
+
+## Netlify Deployment Information
+
+**Hosting Platform:** Netlify
+
+**Custom Site Name:** mart-tracker
+
+**Live URL:** https://mart-tracker.netlify.app/
+
+**Deployment Method:** GitHub repository integration.
+
+**Publish Directory:** Project root (`.`)
+
+**Build Command:** Not required because this is a static HTML, CSS, and JavaScript application.
+
 ## Deployment Process Summary
 
-SpendWise was deployed using GitHub and Netlify.
+The SpendWise application was deployed using GitHub and Netlify.
 
-1. Prepared the project files, including `index.html`, `style.css`, `script.js`, and `README.md`.
-2. Stored the project in the public GitHub repository.
+1. Reviewed the project files to ensure that the HTML, CSS, and JavaScript files were organized correctly.
+2. Created and maintained a public GitHub repository for the project.
 3. Connected the GitHub repository to Netlify.
-4. Configured Netlify to deploy the `main` branch.
-5. Used the project root (`.`) as the publish directory. No build command was required because SpendWise is a static HTML, CSS, and JavaScript application.
-6. Customized the Netlify site name to `mart-tracker`.
-7. Successfully published the website at https://mart-tracker.netlify.app/.
+4. Selected the `main` branch for production deployment.
+5. Configured the project root as the publish directory.
+6. Deployed the website successfully.
+7. Customized the Netlify subdomain to `mart-tracker.netlify.app`.
+8. Opened the live website and tested its functionality.
 
 ## Continuous Deployment Test
 
-Automatic deployment was tested successfully.
+Continuous deployment was tested by making a visible change to the application.
 
-- Updated the introductory sentence in `index.html`.
-- Committed the change with the message `Test automatic Netlify deployment`.
-- Pushed the update to the GitHub `main` branch.
-- Netlify automatically detected the GitHub update and started a new deployment.
-- The deployment completed successfully with the status **Published**.
-- Verified that the updated sentence appeared on the live website.
+The following steps were completed:
 
-**Test commit:** `88c9639`
+1. Updated the introductory sentence in `index.html`.
+2. Saved the change and checked it locally.
+3. Committed the update using the message:
+
+   `Test automatic Netlify deployment`
+
+4. Pushed the commit to the GitHub `main` branch.
+5. Netlify automatically detected the new commit.
+6. Netlify started a new production deployment.
+7. The deployment completed successfully with the status **Published**.
+8. Refreshed the live website and confirmed that the updated text appeared.
+
+**Continuous Deployment Test Commit:** `88c9639`
+
+This confirmed that changes pushed to GitHub are automatically published through Netlify.
 
 ## Final Testing
 
-The deployed website was tested to confirm:
+The live SpendWise application was tested to verify that:
 
-- The website loads successfully.
-- The dashboard layout displays correctly.
-- CSS styling loads correctly.
+- The website opens using its public Netlify URL.
+- The dashboard displays correctly.
+- CSS styling loads successfully.
 - JavaScript functionality works.
-- The Add Expense form works.
-- The updated introductory text appears on the live website.
-- Automatic deployments from GitHub work successfully.
+- The Add Expense form accepts new expenses.
+- Expense calculations update the available balance.
+- Recent spending activity updates correctly.
+- The continuous deployment update appears on the live website.
 
 ## Challenges Encountered During Deployment
 
-1. **Incorrect project directory:** The project was initially opened from Downloads, but that folder was not connected to Git. This was resolved by cloning the existing GitHub repository.
-2. **GitHub authentication error:** The initial HTTPS push was rejected because Git was authenticating as a different GitHub account.
-3. **SSH authentication:** A new SSH key was generated and added to the correct GitHub account, `mmulekya`. Authentication then succeeded.
-4. **Automatic deployment verification:** A visible change was committed and pushed to GitHub to confirm that Netlify automatically deployed updates.
+### 1. Incorrect local project directory
+
+The project files were initially in a Downloads folder that was not connected to Git.
+
+**Solution:** Cloned the existing GitHub repository into a separate Git-connected folder and transferred the updated HTML file.
+
+### 2. GitHub authentication error
+
+The first push was rejected because Git was authenticating using a different GitHub account.
+
+**Solution:** Generated an SSH key, added its public key to the correct GitHub account, and verified authentication as `mmulekya`.
+
+### 3. Verifying automatic deployment
+
+It was necessary to confirm that Netlify could detect changes pushed to GitHub.
+
+**Solution:** Made a visible update, pushed it to the `main` branch, and confirmed that Netlify automatically published the new version.
 
 ## Lessons Learned
 
-- How to publish a local website using GitHub and Netlify.
-- How to connect a GitHub repository to Netlify.
-- How to configure a deployment branch and publish directory.
+- How to deploy a static website using Netlify.
+- How to connect a GitHub repository to a hosting platform.
+- How to configure production branches and publish directories.
 - How to customize a Netlify subdomain.
-- How GitHub SSH authentication works.
-- How continuous deployment automatically publishes new commits.
-- Why testing a live website is important after deployment.
+- How SSH authentication secures GitHub access.
+- How continuous deployment automates website updates.
+- Why testing a live application is important after deployment.
+- Why clear project documentation and a working live URL are important for collaboration and project evaluation.
 
 ## Conclusion
 
-SpendWise was successfully deployed and published using GitHub and Netlify. The live application is accessible at https://mart-tracker.netlify.app/, and automatic deployment was successfully tested.
+SpendWise was successfully deployed and published using GitHub and Netlify.
+
+The live application is accessible at:
+
+**https://mart-tracker.netlify.app/**
+
+The continuous deployment process was also tested successfully, confirming that updates pushed to GitHub are automatically deployed to the live website.
